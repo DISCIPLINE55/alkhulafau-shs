@@ -103,7 +103,115 @@
       </section>
 
       <!-- Add other sections (Attendance, Grades, Reports) similarly -->
+      <!-- Placement Section -->
+<section id="placement" class="content-section">
+  <div class="section-header">
+    <h2>Placement List Management</h2>
+    <div class="header-actions">
+      <button class="btn btn-secondary" id="uploadPlacementBtn">
+        <i class="fas fa-upload"></i> Upload Placement List
+      </button>
+      <button class="btn btn-primary" id="downloadTemplateBtn">
+        <i class="fas fa-download"></i> Download Template
+      </button>
+    </div>
+  </div>
+  
+  <!-- Upload Area -->
+  <div class="upload-section">
+    <div class="upload-area" id="uploadArea">
+      <i class="fas fa-cloud-upload-alt upload-icon"></i>
+      <h3>Upload Placement List</h3>
+      <p>Drag & drop your Excel file here or click to browse</p>
+      <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden>
+      <button class="btn btn-outline" id="browseBtn">Browse Files</button>
+    </div>
+    
+    <!-- File Info -->
+    <div class="file-info" id="fileInfo" style="display: none;">
+      <div class="file-details">
+        <i class="fas fa-file-excel file-icon"></i>
+        <div class="file-meta">
+          <span class="file-name" id="fileName"></span>
+          <span class="file-size" id="fileSize"></span>
+        </div>
+        <button class="btn btn-danger btn-sm" id="removeFileBtn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <button class="btn btn-success" id="processFileBtn">
+        <i class="fas fa-cog"></i> Process File
+      </button>
+    </div>
+  </div>
+  
+  <!-- Search and Filters -->
+  <div class="search-filters-section">
+    <div class="search-box">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search students by name, ID, department, company...">
+      <button class="btn btn-primary" id="searchBtn">Search</button>
+    </div>
+    
+    <div class="filter-controls">
+      <select id="departmentFilter" class="filter-select">
+        <option value="">All Departments</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Business">Business</option>
+        <option value="Engineering">Engineering</option>
+      </select>
       
+      <select id="companyFilter" class="filter-select">
+        <option value="">All Companies</option>
+      </select>
+      
+      <select id="statusFilter" class="filter-select">
+        <option value="">All Status</option>
+        <option value="Placed">Placed</option>
+        <option value="Pending">Pending</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- Placement Data Table -->
+  <div class="table-container">
+    <div class="table-header">
+      <h4>Placement Records</h4>
+      <div class="table-actions">
+        <button class="btn btn-outline" id="exportExcelBtn">
+          <i class="fas fa-file-excel"></i> Export Excel
+        </button>
+        <button class="btn btn-outline" id="exportPdfBtn">
+          <i class="fas fa-file-pdf"></i> Export PDF
+        </button>
+      </div>
+    </div>
+    <table class="data-table" id="placementTable">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Department</th>
+          <th>Company</th>
+          <th>Position</th>
+          <th>Location</th>
+          <th>Salary</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="placementTableBody">
+        <!-- Data will be populated here -->
+      </tbody>
+    </table>
+    
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <!-- Pagination will be generated here -->
+    </div>
+  </div>
+</section>
     </div>
   </main>
 
