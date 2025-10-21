@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alkhulafau SHS - Student Management System</title>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#722f37">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-section">
+        <img src="assets/logo.png" alt="School Logo" class="logo">
+        <div class="school-info">
+          <h1>Alkhulafau SHS</h1>
+          <p>Student Management System</p>
+        </div>
+      </div>
+      <div class="user-section">
+        <div class="user-info">
+          <span id="userName">Admin User</span>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#dashboard" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="#students" class="nav-link"><i class="fas fa-users"></i> Students</a></li>
+        <li><a href="#attendance" class="nav-link"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+        <li><a href="#grades" class="nav-link"><i class="fas fa-chart-bar"></i> Grades</a></li>
+        <li><a href="#reports" class="nav-link"><i class="fas fa-file-alt"></i> Reports</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="content-section active">
+        <div class="section-header">
+          <h2>Dashboard Overview</h2>
+          <div class="date-display" id="currentDate"></div>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="stats-grid" id="statsGrid">
+          <!-- Stats will be populated by JavaScript -->
+        </div>
+        
+        <!-- Charts Section -->
+        <div class="charts-grid">
+          <div class="chart-container">
+            <canvas id="attendanceChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="performanceChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Students Section -->
+      <section id="students" class="content-section">
+        <div class="section-header">
+          <h2>Student Management</h2>
+          <button class="btn btn-primary" id="addStudentBtn">
+            <i class="fas fa-plus"></i> Add Student
+          </button>
+        </div>
+        
+        <div class="filters-section">
+          <!-- Filter controls will be here -->
+        </div>
+        
+        <div class="table-container">
+          <table class="data-table" id="studentsTable">
+            <!-- Table will be populated by JavaScript -->
+          </table>
+        </div>
+      </section>
+
+      <!-- Add other sections (Attendance, Grades, Reports) similarly -->
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Alkhulafau SHS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/pwa.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
